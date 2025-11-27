@@ -16,7 +16,6 @@ int main() {
         
     }
     
-    
     while (choice == 1) {
     printf("Enter Student Number: ");
     scanf("%d", &id);
@@ -31,14 +30,20 @@ int main() {
     fgets(sec, sizeof(sec), stdin);
 
     fprintf(fp, "ID NUMBER: %d\nComplete Name: %s\nSection: %s", id, name, sec);
-    printf("Add another student? [Enter 1 for Yes, 0 for No]: ");
+    printf("\nRecord added and saved successfully");
+    printf("\nAdd another student? [Enter 1 for Yes, 0 for No]: ");
     scanf("%d", &choice);
-    printf("Record added and saved successfully");        
     }
+    
+    while (choice != 0 && choice != 1) {
+    printf("\nInvalid choice! Please enter ONLY 1 or 0:\n");
+    scanf("%d", &choice);
+    getchar();
+  }
     
     fclose(fp);
     
     return 0;
 }
 
-
+    
